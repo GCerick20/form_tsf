@@ -1,0 +1,47 @@
+h4 {
+    text-align: center; 
+}
+body{
+    background-color: white;
+    background-size: 100vw 100vh;
+    background-attachment: fixed;
+    margin: 0;
+}
+
+form{
+    width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0);
+    padding: 10px 20px;
+    box-sizing: border-box;
+    margin-top: 20;
+    border-radius: 7px;
+}
+
+.row_form {
+    margin-top: 10px;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    text-align: center;
+}
+
+.titulo {
+    font-size: 30px;
+    text-align: center;
+}
+
+.subtitulo {
+    font-size: 20px;
+    text-align: left;
+}
+
+.upload-container {
+    height: 150px;
+    width: 700px;
+    margin: 0 auto;
+    border: 1px solid #333;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

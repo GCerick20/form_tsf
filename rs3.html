@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./resources/css/letter.css" />
+    <script src="./resources/js/jspdf.min.js"></script>
+    <script src="./resources/js/rs3.js"></script>
+  </head>
+  <body>
+    <div class="container" style="max-width: 900px">
+      <div class="row" style="margin-top: 20px; margin-bottom: 20px">
+        <div
+          class="col col-md-3"
+          style="
+            border: 1px solid #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          "
+        >
+          <img
+            src="./resources/img/tsf.jpg"
+            align="right"
+            width="70"
+            height="70"
+          />
+        </div>
+        <div class="col col-md-6" style="border: 1px solid #333">
+          <h1 class="titulo">SISTEMAS REGISTRO DE CLIENTES DEL EXTERIOR</h1>
+        </div>
+        <div class="col col-md-3" style="border: 1px solid #333"></div>
+      </div>
+      <form id="form-rs3" method="post" encyte="multipart/form-data">
+        <!-- datos generales -->
+        <div class="row">
+          <div class="col col-md-12 row_form">
+            <h4>DATOS GENERALES</h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-md-4">
+            <label for="ncomp" class="form-label">Nombre Completo </label>
+            <input type="text" class="form-control" id="ncomp" />
+          </div>
+          <div class="col col-md-4">
+            <label for="ncome" class="form-label">Nombre Comercial</label>
+            <input type="text" class="form-control" id="ncome" />
+          </div>
+          <div class="col col-md-4">
+            <label for="usci" class="form-label">USCI/VAT/RUC</label>
+            <input type="text" class="form-control" id="usci" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-md-4">
+            <label for="direc" class="form-label">Dirección</label>
+            <input type="text" class="form-control" id="direc" />
+          </div>
+          <div class="col col-md-4">
+            <label for="cdd" class="form-label">Cuidad</label>
+            <input type="int" class="form-control" id="cdd" />
+          </div>
+          <div class="col col-md-4">
+            <label for="country" class="form-label">País</label>
+            <input type="int" class="form-control" id="country" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-md-4">
+            <label for="mail" class="form-label">E-mail </label>
+            <input type="text" class="form-control" id="mail" />
+          </div>
+          <div class="col col-md-4">
+            <label for="phone" class="form-label">Teléfono </label>
+            <input type="int" class="form-control" id="phone" />
+          </div>
+          <div class="col col-md-4">
+            <label for="contact" class="form-label">Contacto </label>
+            <input type="text" class="form-control" id="contact" />
+          </div>
+        </div>
+        <!-- datos de contacto -->
+        <div class="row">
+          <div class="col col-md-12 row_form">
+            <h4>DATOS DEL CONTACTO</h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-md-4">
+            <label for="nombre" class="form-label">Nombre Completo </label>
+            <input type="text" class="form-control" id="nombre" />
+          </div>
+          <div class="col col-md-4">
+            <label for="dir" class="form-label">Dirección </label>
+            <input type="text" class="form-control" id="dir" />
+          </div>
+          <div class="col col-md-4">
+            <label for="gmail" class="form-label">E-mail </label>
+            <input type="email" class="form-control" id="gmail" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-md-4">
+            <label for="cell" class="form-label">Celular </label>
+            <input type="text" class="form-control" id="cell" />
+          </div>
+        </div>
+        <!-- datos de contacto -->
+        <div class="row">
+          <div class="col col-md-12 row_form">
+            <h4>PAGO</h4>
+          </div>
+        </div>
+        <div class="row">
+          <div
+            class="col col-md-12"
+            style="border: 1px solid #333; margin-top: 20px; text-align: center"
+          >
+            <label for="span" class="form-label">Forma de Pago</label>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 10px">
+          <div class="col col-md-12">
+            <textarea
+              name="comentspan"
+              placeholder="Descripción "
+              rows="5"
+              id="span"
+              style="width: 100%"
+            ></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div
+            class="col col-md-12"
+            style="border: 1px solid #333; margin-top: 20px; text-align: center"
+          >
+            <label for="span2" class="form-label">Plazos de Pago</label>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 10px">
+          <div class="col col-md-12">
+            <textarea
+              name="coment1"
+              placeholder="Descripción "
+              rows="5"
+              id="span2"
+              style="width: 100%"
+            ></textarea>
+          </div>
+        </div>
+        <!-- Botones -->
+        <div class="row">
+          <div class="col col-md-4">
+            <button id="btnGuardar" type="submit" class="btn btn-success">
+              Descargar PDF
+            </button>
+          </div>
+        </div>
+      </form>
+      <br />
+      <div class="row">
+        <h4>SUBIR DOCUMENTO</h4>
+      </div>
+      <form
+        method="post"
+        action="rs3.controller.php"
+      >
+        <div class="upload-container">
+          <button type="submit" class="btn-success">Subir
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"></path>
+          </svg>
+        </button>
+          <input type="file" id="archivo" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
