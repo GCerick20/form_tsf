@@ -4,31 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SISTEMAS REGISTRO
+        Y ACTUALIZACION DE PROOVEDORES</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
             integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-            <link rel="stylesheet" href="./css/letter.css">
+            <link rel="stylesheet" href="./resources/css/letter.css">
             <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
-                 <script src="jspdf.min.js"></script>
-                     <script src="app2.js"></script>
+                 <script src="./resources/js/jspdf.min.js"></script>
+                     <script src="./resources/js/rs2.js"></script>
                  
 </head>
 
   <body>
-    <div class="container" mt-4>
+    <div class="container" style="max-width: 900px">
         <div class="row">
-            <div class="col-md-8 offset-md-2">
-                 <img src="./img/tsf.jpg" align="right" width="70" height="70"/>
-                   <h4>SISTEMAS REGISTRO <br>Y ACTUALIZACION DE PROOVEDORES</h4>
-                                 <hr>
-                            <h4>DATOS GENERALES </h4> 
-                                 <hr>
-                                 <form id="form">
-
-                                    <div class="row mb-3">
+            <!-- cabecera -->
+            <div class="row" style="margin-top: 20px; margin-bottom: 20px">
+                <div
+                  class="col col-md-3"
+                  style="
+                    border: 1px solid #333;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <img
+                    src="./resources/img/tsf.jpg"
+                    align="right"
+                    width="70"
+                    height="70"
+                  />
+                </div>
+                <div class="col col-md-6" style="border: 1px solid #333">
+                  <h1 class="titulo">SISTEMAS REGISTRO DE CLIENTES DEL EXTERIOR</h1>
+                </div>
+                <div class="col col-md-3" style="border: 1px solid #333"></div>
+              </div>
+              <form id="form-rs2" method="post" encyte="multipart/form-data">
+                <div class="row mb-3">
                                         <div class="col-md-6">
                                             <label for="solt" class="form-label">Solicitante</label>
-                                            <input type="text" class="form-control" id="solt">
+                                            <input type="text" class="form-control" id="solt"/>
                                         </div>
 
                                         <div class="col-md-6">
@@ -53,19 +70,19 @@
                            
                                         <div class="col-md-6">
                                             <label for="tcontr" class="form-label">Tipo contribuyente</label>
-                                            <input type="text" class="form-control" id="tcontr">
+                                            <input type="text" class="form-control" id="tcontr"/>
                                         </div>
 
                                         <P></P>
 
                                         <div class="col-md-6">
                                             <label for="clase" class="form-label">Clase contribuyente</label>
-                                            <input type="text" class="form-control" id="clase">
+                                            <input type="text" class="form-control" id="clase"/>
                                         </div>
 
                                         <div class="col-md-6">
                                             <label for="conta" class="form-label">Obligado a llevar la contabilidad</label>
-                                            <input type="text" class="form-control"  id="conta">
+                                            <input type="text" class="form-control"  id="conta"/>
                                         </div>
 
                                         <P></P>
@@ -82,52 +99,52 @@
 
                                         <div class="col-md-6">
                                                 <label for="num" class="form-label">Numero</label>
-                                                <input type="int" class="form-control" id="num">
+                                                <input type="int" class="form-control" id="num"/>
                                         </div>
 
                                         <P></P>
 
                                         <div class="col-md-14">
                                                 <label for="social" class="form-label">Razón social: </label>
-                                                <input type="text" class="form-control"   id="social">
+                                                <input type="text" class="form-control"   id="social"/>
                                         </div>
 
                                         <P></P>
 
                                         <div class="col-md-14">
                                                 <label for="comercial" class="form-label">Nombre Comercial: </label>
-                                                <input type="text" class="form-control"  id="comercial">
+                                                <input type="text" class="form-control"  id="comercial"/>
                                         </div>
 
                                         <P></P>
 
                                         <div class="col-md-14">
                                             <label for="direccion" class="form-label">Direeción: </label>
-                                            <input type="text" class="form-control"  id="direccion">
+                                            <input type="text" class="form-control"  id="direccion"/>
                                         </div>
 
                                         <P></P>
 
                                         <div class="col-md-6">
                                             <label for="num1" class="form-label">Telefono 1: </label>
-                                            <input type="text" class="form-control"  id="num1">
+                                            <input type="text" class="form-control"  id="num1"/>
                                         </div>
 
                                         <div class="col-md-6">
                                             <label for="num2" class="form-label">Telefono 2: </label>
-                                            <input type="text" class="form-control"  id="num2">
+                                            <input type="text" class="form-control"  id="num2"/>
                                         </div>
 
                                         <P></P>
 
                                         <div class="col-md-6">
                                             <label for="correo" class="form-label">Email: </label>
-                                            <input type="text" class="form-control"   id="correo">
+                                            <input type="text" class="form-control"   id="correo"/>
                                         </div>
 
                                         <div class="col-md-6">
                                             <label for="tproovedor" class="form-label">Tipo de proovedor: </label>
-                                            <input type="text" class="form-control"  id="tproovedor">
+                                            <input type="text" class="form-control"  id="tproovedor"/>
                                         </div>
 
                                         <p></p>
@@ -136,44 +153,44 @@
                                         <p></p>
                                         <div class="col-md-6">
                                             <label for="compra" class="form-label">Compra: </label>
-                                            <input type="text" class="form-control"   id="compra">
+                                            <input type="text" class="form-control"   id="compra"/>
                                         </div>
                                         
                                         <div class="col-md-6">
                                             <label for="anticipo" class="form-label">Anticipo: </label>
-                                            <input type="text" class="form-control"  id="anticipo">
+                                            <input type="text" class="form-control"  id="anticipo"/>
                                         </div>
-                                    </div>
-                                    <p></p>
+                </div>
+                 <p></p>
                                     <hr>
                                     <h4><label>CAMARONERO</h4>
                                     <hr>
                                         <div class="row mb-3">
                                             <div class="col-md-6">
                                                 <label for="zona" class="form-label">Zona: </label>
-                                                <input type="text" class="form-control"   id="zona">
+                                                <input type="text" class="form-control"   id="zona"/>
                                             </div>
                                             <div class="col-md-6">
                                                 <label for="sitio" class="form-label">Sitio: </label>
-                                                <input type="text" class="form-control"  id="sitio">
+                                                <input type="text" class="form-control"  id="sitio"/>
                                             </div>
                                             <p></p>
                                             <div class="col-md-6">
                                                 <label for="hect" class="form-label">Hectarias: </label>
-                                                <input type="text" class="form-control"   id="hect">
+                                                <input type="text" class="form-control"   id="hect"/>
                                             </div>
                                             <div class="col-md-6">
                                                 <label for="pisc" class="form-label">Num. Piscinas: </label>
-                                                <input type="text" class="form-control"  id="pisc">
+                                                <input type="text" class="form-control"  id="pisc"/>
                                             </div>
                                             <p></p>
                                             <div class="col-md-6">
                                                 <label for="mins" class="form-label">A. Ministerial: </label>
-                                                <input type="text" class="form-control"   id="mins">
+                                                <input type="text" class="form-control"   id="mins"/>
                                             </div>
                                             <div class="col-md-6">
                                                 <label for="tramite" class="form-label">INP/Tramite: </label>
-                                                <input type="text" class="form-control"  id="tramite">
+                                                <input type="text" class="form-control"  id="tramite"/>
                                             </div>
                                         </div>
                                         <p></p>
@@ -184,57 +201,63 @@
                                 <div class="row mb-3">
                                     <div class="col-md-6">
                                         <label for="tpago" class="form-label">Tipo de pago: </label>
-                                        <input type="text" class="form-control"   id="tpago">
+                                        <input type="text" class="form-control"   id="tpago"/>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="banco" class="form-label">Banco: </label>
-                                        <input type="text" class="form-control"  id="banco">
+                                        <input type="text" class="form-control"  id="banco"/>
                                     </div>
                                     <p></p>
                                     <div class="col-md-6">
                                         <label for="tcuenta" class="form-label">Tipo de Cuenta: </label>
-                                        <input type="text" class="form-control"   id="tcuenta">
+                                        <input type="text" class="form-control"   id="tcuenta"/>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="ncuenta" class="form-label">N. Cuenta: </label>
-                                        <input type="text" class="form-control"  id="ncuenta">
+                                        <input type="text" class="form-control"  id="ncuenta"/>
                                     </div>
                                     <p></p>
                                     <div class="col-md-14">
                                         <label for="epago" class="form-label">Email pago: </label>
-                                        <input type="text" class="form-control"   id="epago">
+                                        <input type="text" class="form-control"   id="epago"/>
                                     </div>
                                     <p></p>
                                     <div class="col-md-6">
                                         <label for="fpago" class="form-label">Forma de pago:</label>
-                                        <input type="text" class="form-control"   id="fpago">
+                                        <input type="text" class="form-control"   id="fpago"/>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="dcredito" class="form-label">Dias de credito:</label>
-                                        <input type="text" class="form-control"  id="dcredito">
+                                        <input type="text" class="form-control"  id="dcredito"/>
                                     </div>
                                    <p></p>
                                    <p></p>
                                    <p></p>
-                                    <div style="text-align: right; width: 455px ;">
-                                        <button type="submit" class="btn btn-primary mb-4">Descargar</button>
-                                    </div> 
+                                   <div class="col col-md-4">
+                                    <button id="btnGuardar2" type="submit" class="btn btn-success">
+                                      Descargar PDF
+                                    </button>
+                                  </div>
                                 </div>
-                                <form method="post" action="procesar_formulario.php" encyte ="multipart/form-data">
-                                    <hr>
-                                    <h4>SUBIR DOCUMENTO</h4>
-                                    <hr>
-                                            <br>
-                                <div class="col-md-12">
-                                <label for="archivo">Archivo:</label>
-                                <input type="file" id="archivo" required accept=".pdf"><br><br>
-                        
-                                <input type="submit"  class="btn btn-primary mb-4"  value="Subir">
-                            </div>
-                     </form>
-                  
-                </div>
-            </div>
-         </div>
+                                <br />
+      <div class="row">
+        <h4>SUBIR DOCUMENTO</h4>
+      </div>
+      <form
+        method="post"
+        action="rs3.controller.php"
+      >
+        <div class="upload-container">
+          <button type="submit" class="btn-success">Subir
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"></path>
+          </svg>
+        </button>
+          <input type="file" id="archivo" />
+        </div>
+      </form>
+    </div>
+    </div>
+    </div>
     </body>
 </html>

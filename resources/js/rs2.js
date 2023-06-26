@@ -17,12 +17,10 @@ function loadImage(url) {
 }
 
 
-window.addEventListener('load', async () => {
-
-  
-    const form = document.querySelector('#form');
-    form.addEventListener('submit', (e) =>{
-        e.preventDefault();
+window.addEventListener("load", async () => {
+    const form = document.getElementById("form-rs2");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
 
         let solt = document.getElementById('solt').value;
         let pnuevo = document.getElementById('pnuevo').value;
@@ -65,7 +63,7 @@ window.addEventListener('load', async () => {
 
 async function generatePDF(solt, pnuevo, act, tcontr, clase, conta, ident, num, social, comercial, direccion, num1, num2, correo, tproovedor, compra, anticipo, zona,
                         sitio, hect, pisc, mins, tramite, tpago, banco, tcuenta, ncuenta, epago, fpago, dcredito){
-    const image = await loadImage("rs2.png");
+    const image = await loadImage("./resources/img/rs2.png");
    
         const pdf = new jsPDF('p', 'pt', 'A4');
         pdf.addImage(image, 'PNG', 0, 0, 600, 850);

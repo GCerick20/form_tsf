@@ -1,7 +1,5 @@
 <?php
 
-print_r($_FILES); die();
-
 // Verificar si se ha seleccionado un archivo
 if ($_FILES['archivo']['error'] === UPLOAD_ERR_OK) {
     // Obtener la información del archivo
@@ -14,35 +12,38 @@ if ($_FILES['archivo']['error'] === UPLOAD_ERR_OK) {
     if ($archivo_tipo === 'application/pdf') {
         // Leer el contenido del archivo
         $archivo_contenido = file_get_contents($archivo_temporal);
+        print_r($archivo_contenido);die();
         
-        // Realizar la conexión a la base de datos
-        $conexion = new mysqli('localhost', 'root', '', 'prueba');
-        
-        // Verificar si la conexión fue exitosa
-        if ($conexion->connect_errno) {
-            die('Error en la conexión a la base de datos: ' . $conexion->connect_error);
+        // Crea una conexión a la base de datos
+        $conn = new mysqli("localhost", "root", "1234", "prueba");
+
+        // Verifica si hay errores de conexión
+        if ($conn->connect_error) {
+            die("Error de conexión: " . $conn->connect_error);
         }
-        
-        // Preparar la consulta para insertar el archivo en la base de datos
-        $consulta = $conexion->prepare("INSERT INTO archivo (nombre, tipo, contenido) VALUES (?, ?, ?)");
-        
-        // Asociar los parámetros a la consulta
-        $consulta->bind_param('sss', $archivo_nombre, $archivo_tipo, $archivo_contenido);
-        
-        // Ejecutar la consulta
-        if ($consulta->execute()) {
-            echo 'El archivo se ha guardado en la base de datos correctamente.';
+
+        // Prepara la consulta SQL
+        $sql = "INSERT INTO archivos (nombre, tipo, contenido) VALUES (?, ?, ?)";
+
+        // Prepara la declaración
+        $stmt = $conn->prepare($sql);
+
+        // Vincula los parámetros
+        $stmt->bind_param("sss", $archivo_nombre, $archivo_tipo, $archivo_contenido);
+
+        // Ejecuta la consulta
+        if ($stmt->execute()) {
+            echo "Archivo PDF registrado correctamente.";
         } else {
-            echo 'Error al guardar el archivo en la base de datos.';
+            echo "Error al registrar el archivo PDF: " . $conn->error;
         }
-        
-        // Cerrar la conexión y liberar recursos
-        $consulta->close();
-        $conexion->close();
+
+        // Cierra la declaración y la conexión
+        $stmt->close();
+        $conn->close();
     } else {
         echo 'El archivo debe ser en formato PDF.';
     }
 } else {
     echo 'Error al subir el archivo.';
 }
-?>
